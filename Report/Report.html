@@ -1,0 +1,521 @@
+<STYLE>
+BODY, P, TABLE, DIV.CAPTION {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 95%;
+}
+H1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #3b577d;
+}
+H2 {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #3b577d;
+}
+H3 {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #3b577d;
+}
+H4 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #3b577d;
+}
+H5 {
+  font-size: 1.1em;
+  font-weight: normal;
+  color: #3b577d;
+}
+H6 {
+  font-size: 1.05em;
+  font-weight: normal;
+  color: #3b577d;
+}
+P {
+  font-weight: normal;
+}
+P.Subject {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #000099;
+  text-align: center;
+}
+P.Heading {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+P.Title {
+  font-size: 1.0em;
+  text-align: center;
+  margin-top: 0pt;
+}
+P.Bold {
+  font-weight: bold;
+}
+TABLE{
+  border-collapse: collapse;
+  border: solid 1px #A5BAD5;
+}
+TD {
+  border: solid 1px #A5BAD5;
+  padding: 3px 5px 3px 5px;
+  font-weight: normal;
+  vertical-align:top
+}
+DIV.CAPTION {
+  font-weight: normal;
+  text-align: left;
+}
+TABLE.FigureTable { 
+  border-collapse: collapse;
+  border: 0px;
+  margin: 0px 0px 0px 0px;
+  page-break-inside: avoid;
+}
+TD.FigureTitle {
+  border: 0px;
+  padding: 3px 5px 3px 5px;
+  font-weight: normal;
+  text-align: left;
+}
+TD.FigurePicture {
+  border: 0px;
+  padding: 0px 0px 0px 0px;
+  font-weight: normal;
+  text-align: left;
+}
+TD.Figure3D {
+  border: 1px solid black;
+  padding: 0px 0px 0px 0px;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+}
+TD.FigureClose3D {
+  border: 0px;
+  padding: 0px 0px 0px 0px;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+}
+
+
+TD.TDStyle1 {
+  font-size: 1.0em;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  color: #000000;
+  background-color: #d1dcea
+}
+
+TD.TDStyle2 {
+  font-size: 1.0em;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: left;
+  color: #000000;
+  background-color: #ffffff
+}
+
+TD.TDStyle3 {
+  font-size: 1.0em;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  color: #000000;
+  background-color: #e8eef5
+}
+
+TD.TDStyle4 {
+  font-size: 1.0em;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: right;
+  color: #000000;
+  background-color: #ffffff
+}
+
+TD.TDStyle5 {
+  font-size: 1.0em;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  text-align: left;
+  color: #000000;
+  background-color: #d1dcea
+}
+
+TD.TDStyle6 {
+  font-size: 1.0em;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: left;
+  color: #000000;
+  background-color: #e8eef5
+}
+
+
+</STYLE>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>IC Engine Combustion Simulation Report</title>
+</head>
+<body>
+<p class='Title'><img src='Report/AnsysReportLogo.png'></p>
+<p class='Heading'>Title</p>
+<p class='Title'>IC Engine Combustion Simulation Report</p>
+<p class='Heading'>Date</p>
+<p class='Title'> 2015/05/10 19:30:00</p>
+<hr>
+<h1>Contents</h1>
+<p><a href="#SECTION1.">1.&nbsp;File Report</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#TABLE1">Table 1</a>&nbsp;&nbsp;File Information for Sector_Act_t02<br>
+<a href="#SECTION2.">2.&nbsp;Mesh Report</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#TABLE2">Table 2</a>&nbsp;&nbsp;Mesh Information for Sector_Act_t02<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#TABLE3">Table 3</a>&nbsp;&nbsp;Cell count at crank angles<br>
+<a href="#SECTION3.">3.&nbsp;Setup</a><br>
+&nbsp;&nbsp;<a href="#SECTION3.1.">3.1.&nbsp;Physics</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#TABLE4">Table 4</a>&nbsp;&nbsp;Boundary Conditions<br>
+&nbsp;&nbsp;<a href="#SECTION3.2.">3.2.&nbsp;Relaxations</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#TABLE5">Table 5</a>&nbsp;&nbsp;Relaxations at crank angles<br>
+&nbsp;&nbsp;<a href="#SECTION3.3.">3.3.&nbsp;Dynamic Mesh Setup</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#TABLE6">Table 6</a>&nbsp;&nbsp;Dynamic Mesh Events<br>
+&nbsp;&nbsp;<a href="#SECTION3.4.">3.4.&nbsp;IC Engine System Inputs</a><br>
+<a href="#SECTION4.">4.&nbsp;Solution Data</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.1.">4.1.&nbsp;Animation: mesh-on-ice_cutplane_1</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.2.">4.2.&nbsp;Animation: pt-temperature on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.3.">4.3.&nbsp;Animation: pt-velocity-magnitude on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.4.">4.4.&nbsp;Animation: temperature on ice_cutplane_1</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.5.">4.5.&nbsp;Animation: velocity-magnitude on ice_cutplane_1</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.6.">4.6.&nbsp;Table: mesh-on-ice_cutplane_1</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.7.">4.7.&nbsp;Table: pt-temperature on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.8.">4.8.&nbsp;Table: pt-velocity-magnitude on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.9.">4.9.&nbsp;Table: temperature on ice_cutplane_1</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.10.">4.10.&nbsp;Table: velocity-magnitude on ice_cutplane_1</a><br>
+&nbsp;&nbsp;<a href="#SECTION4.11.">4.11.&nbsp;Charts</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART1">Chart 1</a>&nbsp;&nbsp;Swirl Ratio<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART2">Chart 2</a>&nbsp;&nbsp;Tumble Ratio<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART3">Chart 3</a>&nbsp;&nbsp;Cross Tumble Ratio<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART4">Chart 4</a>&nbsp;&nbsp;Apparent Heat Release Rate on (ice-fluid-chamber-bottom ice-fluid-chamber-top ice-fluid-piston)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART5">Chart 5</a>&nbsp;&nbsp;Number of Iterations per Time Step<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART6">Chart 6</a>&nbsp;&nbsp;Monitor: Mass-Average Turbulent Kinetic Energy (k) (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART7">Chart 7</a>&nbsp;&nbsp;Monitor: Volume Integral Density (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART8">Chart 8</a>&nbsp;&nbsp;Monitor: Max Static Pressure (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART9">Chart 9</a>&nbsp;&nbsp;Monitor: Max Static Temperature (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART10">Chart 10</a>&nbsp;&nbsp;Monitor: Max Velocity Magnitude (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART11">Chart 11</a>&nbsp;&nbsp;Penetration length of injection-0 per Time Step<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART12">Chart 12</a>&nbsp;&nbsp;Monitor: Volume-Average Static Pressure (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART13">Chart 13</a>&nbsp;&nbsp;Monitor: Volume Integral Static Temperature (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CHART14">Chart 14</a>&nbsp;&nbsp;Monitor: Volume (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)<br>
+</p>
+<hr>
+
+<h1 style='page-break-before:always'><a name=SECTION1.></a>1.&nbsp;File Report</h1>
+
+<a name=TABLE1></a><DIV CLASS=CAPTION><b>Table 1.</b>&nbsp;&nbsp;File Information for Sector_Act_t02</DIV>
+<TABLE>
+  <TR>
+    <TD CLASS=TDStyle1>Case</TD>
+    <TD CLASS=TDStyle2>Sector_Act_t02</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle1>File Path</TD>
+    <TD CLASS=TDStyle2>G:\Project_Azy\28 March ICE tarun sir\Sector Flow_D\Sector_Act_files\dp0\ICE-1\Fluent\ICE-1-1-01482.dat.gz</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle1>File Date</TD>
+    <TD CLASS=TDStyle2>10 May 2015</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle1>File Time</TD>
+    <TD CLASS=TDStyle2>07:26:53 PM</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle1>File Type</TD>
+    <TD CLASS=TDStyle2>FLUENT</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle1>File Version</TD>
+    <TD CLASS=TDStyle2>15.0.7</TD>
+  </TR>
+</TABLE>
+&nbsp;<br>
+
+<h1 style='page-break-before:always'><a name=SECTION2.></a>2.&nbsp;Mesh Report</h1>
+
+<a name=TABLE2></a><DIV CLASS=CAPTION><b>Table 2.</b>&nbsp;&nbsp;Mesh Information for Sector_Act_t02</DIV>
+<TABLE>
+  <TR>
+    <TD CLASS=TDStyle1>Domain</TD>
+    <TD CLASS=TDStyle1>Nodes</TD>
+    <TD CLASS=TDStyle1>Elements</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle3>ice fluid chamber bottom</TD>
+    <TD CLASS=TDStyle4>1178498</TD>
+    <TD CLASS=TDStyle4>1140189</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle3>ice fluid chamber top</TD>
+    <TD CLASS=TDStyle4>22028</TD>
+    <TD CLASS=TDStyle4>16059</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle3>ice fluid piston</TD>
+    <TD CLASS=TDStyle4>127207</TD>
+    <TD CLASS=TDStyle4>117504</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle3>All Domains</TD>
+    <TD CLASS=TDStyle4>1327733</TD>
+    <TD CLASS=TDStyle4>1273752</TD>
+  </TR>
+</TABLE>
+&nbsp;<br>
+
+<a name=TABLE3></a><DIV CLASS=CAPTION><b>Table 3.</b>&nbsp;&nbsp;Cell count at crank angles</DIV>
+<TABLE>
+  <TR>
+    <TD CLASS=TDStyle5>Crank Angle</TD>
+    <TD CLASS=TDStyle5>Cell Count</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle6> 0.000e+00</TD>
+    <TD CLASS=TDStyle2> 1.550e+05</TD>
+  </TR>
+</TABLE>
+&nbsp;<br>
+
+<h1 style='page-break-before:always'><a name=SECTION3.></a>3.&nbsp;Setup</h1>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p>
+<h2><a name=SECTION3.1.></a>3.1.&nbsp;Physics</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p>
+<a name=TABLE4></a><DIV CLASS=CAPTION><b>Table 4.</b>&nbsp;&nbsp;Boundary Conditions</DIV>
+<TABLE>
+  <TR>
+    <TD CLASS=TDStyle5>Type</TD>
+    <TD CLASS=TDStyle5>Zones</TD>
+    <TD CLASS=TDStyle5>Values</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle6>wall</TD>
+    <TD CLASS=TDStyle2>ice-cyl-chamber-bottom</TD>
+    <TD CLASS=TDStyle2>Temperature (k) 567 </TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle6>wall</TD>
+    <TD CLASS=TDStyle2>ice-cyl-chamber-top</TD>
+    <TD CLASS=TDStyle2>Temperature (k) 567 </TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle6>wall</TD>
+    <TD CLASS=TDStyle2>ice-cyl-piston</TD>
+    <TD CLASS=TDStyle2>Temperature (k) 567 </TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle6>wall</TD>
+    <TD CLASS=TDStyle2>ice-piston</TD>
+    <TD CLASS=TDStyle2>Temperature (k) 645 </TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle6>wall</TD>
+    <TD CLASS=TDStyle2>ice-sector-top-faces</TD>
+    <TD CLASS=TDStyle2>Temperature (k) 602 </TD>
+  </TR>
+</TABLE>
+&nbsp;<br>
+
+<h2><a name=SECTION3.2.></a>3.2.&nbsp;Relaxations</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p>
+<a name=TABLE5></a><DIV CLASS=CAPTION><b>Table 5.</b>&nbsp;&nbsp;Relaxations at crank angles</DIV>
+<TABLE>
+  <TR>
+    <TD CLASS=TDStyle5>Crank Angle</TD>
+    <TD CLASS=TDStyle5>Pressure</TD>
+    <TD CLASS=TDStyle5>Density</TD>
+    <TD CLASS=TDStyle5>Body Forces</TD>
+    <TD CLASS=TDStyle5>Momentum</TD>
+    <TD CLASS=TDStyle5>Turbulent Kinetic Energy</TD>
+    <TD CLASS=TDStyle5>Turbulent Dissipation Rate</TD>
+    <TD CLASS=TDStyle5>Turbulent Viscosity</TD>
+    <TD CLASS=TDStyle5>Species</TD>
+    <TD CLASS=TDStyle5>Energy</TD>
+    <TD CLASS=TDStyle5>Discrete Phase Sources</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle6> 0.000</TD>
+    <TD CLASS=TDStyle2> 0.300</TD>
+    <TD CLASS=TDStyle2> 1.000</TD>
+    <TD CLASS=TDStyle2> 1.000</TD>
+    <TD CLASS=TDStyle2> 0.500</TD>
+    <TD CLASS=TDStyle2> 0.400</TD>
+    <TD CLASS=TDStyle2> 0.400</TD>
+    <TD CLASS=TDStyle2> 1.000</TD>
+    <TD CLASS=TDStyle2> 1.000</TD>
+    <TD CLASS=TDStyle2> 1.000</TD>
+    <TD CLASS=TDStyle2> 1.000</TD>
+  </TR>
+</TABLE>
+&nbsp;<br>
+
+<h2><a name=SECTION3.3.></a>3.3.&nbsp;Dynamic Mesh Setup</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p>
+<a name=TABLE6></a><DIV CLASS=CAPTION><b>Table 6.</b>&nbsp;&nbsp;Dynamic Mesh Events</DIV>
+<TABLE>
+  <TR>
+    <TD CLASS=TDStyle5>At Crank Angle (deg)</TD>
+    <TD CLASS=TDStyle5>Name</TD>
+    <TD CLASS=TDStyle5>Description</TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle6>721.000</TD>
+    <TD CLASS=TDStyle2>reduce-dt-injection-0(0.05), enable-pt-cal-act-for-injection-0</TD>
+    <TD CLASS=TDStyle2></TD>
+  </TR>
+  <TR>
+    <TD CLASS=TDStyle6>742.500</TD>
+    <TD CLASS=TDStyle2>increase-dt-injection-0(0.25), disable-pt-cal-act-for-injection-0</TD>
+    <TD CLASS=TDStyle2></TD>
+  </TR>
+</TABLE>
+&nbsp;<br>
+
+<h2><a name=SECTION3.4.></a>3.4.&nbsp;IC Engine System Inputs</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;">Engine Inputs</p><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Engine Speed (rev/min) : 1500</p><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Crank Radius (mm) : 55</p><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Piston Pin Offset/Wrench (mm) : 0</p><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Connecting Rod Length (mm) : 232.5</p><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">-</p><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;">Journal Customization</p><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Pre Iteration Journal File : N/A </p><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Post Iteration Journal File : N/A </p>
+<h1 style='page-break-before:always'><a name=SECTION4.></a>4.&nbsp;Solution Data</h1>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p>
+<h2><a name=SECTION4.1.></a>4.1.&nbsp;Animation: mesh-on-ice_cutplane_1</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="Report/ice-anim-mesh-on-ice_cutplane_1-.gif" title="Report/ice-anim-mesh-on-ice_cutplane_1-.gif" /></p>
+<h2><a name=SECTION4.2.></a>4.2.&nbsp;Animation: pt-temperature on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="Report/ice-pt-temperature-on-image3-.gif" title="Report/ice-pt-temperature-on-image3-.gif" /></p>
+<h2><a name=SECTION4.3.></a>4.3.&nbsp;Animation: pt-velocity-magnitude on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="Report/ice-pt-velocity-magnitude-on-image4-.gif" title="Report/ice-pt-velocity-magnitude-on-image4-.gif" /></p>
+<h2><a name=SECTION4.4.></a>4.4.&nbsp;Animation: temperature on ice_cutplane_1</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="Report/ice-temperature-on-image2-.gif" title="Report/ice-temperature-on-image2-.gif" /></p>
+<h2><a name=SECTION4.5.></a>4.5.&nbsp;Animation: velocity-magnitude on ice_cutplane_1</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="Report/ice-velocity-magnitude-on-image1-.gif" title="Report/ice-velocity-magnitude-on-image1-.gif" /></p>
+<h2><a name=SECTION4.6.></a>4.6.&nbsp;Table: mesh-on-ice_cutplane_1</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"> <TABLE><TR><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0573.750.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0596.250.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0622.500.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0648.750.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0675.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0701.250.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0722.300.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0727.550.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0732.801.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0738.052.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0746.502.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0772.752.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0799.002.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0825.252.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-anim-mesh-on-ice_cutplane_1-CA_0851.502.jpg" width="493" height="370" /></TD></TR></TABLE> </p>
+<h2><a name=SECTION4.7.></a>4.7.&nbsp;Table: pt-temperature on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"> <TABLE><TR><TD><img src="Report/ice-pt-temperature-on-image3-CA_0704.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-temperature-on-image3-CA_0707.999.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-temperature-on-image3-CA_0711.999.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-pt-temperature-on-image3-CA_0715.999.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-temperature-on-image3-CA_0719.999.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-temperature-on-image3-CA_0724.000.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-pt-temperature-on-image3-CA_0728.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-temperature-on-image3-CA_0732.001.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-temperature-on-image3-CA_0736.001.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-pt-temperature-on-image3-CA_0740.002.jpg" width="493" height="370" /></TD></TABLE> </p>
+<h2><a name=SECTION4.8.></a>4.8.&nbsp;Table: pt-velocity-magnitude on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"> <TABLE><TR><TD><img src="Report/ice-pt-velocity-magnitude-on-image4-CA_0704.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-velocity-magnitude-on-image4-CA_0707.999.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-velocity-magnitude-on-image4-CA_0711.999.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-pt-velocity-magnitude-on-image4-CA_0715.999.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-velocity-magnitude-on-image4-CA_0719.999.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-velocity-magnitude-on-image4-CA_0724.000.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-pt-velocity-magnitude-on-image4-CA_0728.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-velocity-magnitude-on-image4-CA_0732.001.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-pt-velocity-magnitude-on-image4-CA_0736.001.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-pt-velocity-magnitude-on-image4-CA_0740.002.jpg" width="493" height="370" /></TD></TABLE> </p>
+<h2><a name=SECTION4.9.></a>4.9.&nbsp;Table: temperature on ice_cutplane_1</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"> <TABLE><TR><TD><img src="Report/ice-temperature-on-image2-CA_0570.250.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-temperature-on-image2-CA_0584.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-temperature-on-image2-CA_0604.000.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-temperature-on-image2-CA_0624.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-temperature-on-image2-CA_0644.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-temperature-on-image2-CA_0664.000.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-temperature-on-image2-CA_0684.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-temperature-on-image2-CA_0704.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-temperature-on-image2-CA_0728.000.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-temperature-on-image2-CA_0748.002.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-temperature-on-image2-CA_0768.002.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-temperature-on-image2-CA_0788.002.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-temperature-on-image2-CA_0808.002.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-temperature-on-image2-CA_0828.002.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-temperature-on-image2-CA_0852.002.jpg" width="493" height="370" /></TD></TR></TABLE> </p>
+<h2><a name=SECTION4.10.></a>4.10.&nbsp;Table: velocity-magnitude on ice_cutplane_1</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"> <TABLE><TR><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0570.250.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0584.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0604.000.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0624.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0644.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0664.000.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0684.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0704.000.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0728.000.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0748.002.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0768.002.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0788.002.jpg" width="493" height="370" /></TD></TR><TR><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0808.002.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0828.002.jpg" width="493" height="370" /></TD><TD><img src="Report/ice-velocity-magnitude-on-image1-CA_0852.002.jpg" width="493" height="370" /></TD></TR></TABLE> </p>
+<h2><a name=SECTION4.11.></a>4.11.&nbsp;Charts</h2>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"></p>
+<a name=CHART1></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 1.</b>&nbsp;&nbsp;Swirl Ratio</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart001.png' ALT='Chart 1. Report/Chart001.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART2></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 2.</b>&nbsp;&nbsp;Tumble Ratio</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart002.png' ALT='Chart 2. Report/Chart002.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART3></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 3.</b>&nbsp;&nbsp;Cross Tumble Ratio</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart003.png' ALT='Chart 3. Report/Chart003.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART4></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 4.</b>&nbsp;&nbsp;Apparent Heat Release Rate on (ice-fluid-chamber-bottom ice-fluid-chamber-top ice-fluid-piston)</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart004.png' ALT='Chart 4. Report/Chart004.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART5></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 5.</b>&nbsp;&nbsp;Number of Iterations per Time Step</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart005.png' ALT='Chart 5. Report/Chart005.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART6></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 6.</b>&nbsp;&nbsp;Monitor: Mass-Average Turbulent Kinetic Energy (k) (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart006.png' ALT='Chart 6. Report/Chart006.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART7></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 7.</b>&nbsp;&nbsp;Monitor: Volume Integral Density (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart007.png' ALT='Chart 7. Report/Chart007.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART8></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 8.</b>&nbsp;&nbsp;Monitor: Max Static Pressure (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart008.png' ALT='Chart 8. Report/Chart008.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART9></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 9.</b>&nbsp;&nbsp;Monitor: Max Static Temperature (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart009.png' ALT='Chart 9. Report/Chart009.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART10></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 10.</b>&nbsp;&nbsp;Monitor: Max Velocity Magnitude (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart010.png' ALT='Chart 10. Report/Chart010.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART11></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 11.</b>&nbsp;&nbsp;Penetration length of injection-0 per Time Step</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart011.png' ALT='Chart 11. Report/Chart011.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART12></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 12.</b>&nbsp;&nbsp;Monitor: Volume-Average Static Pressure (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart012.png' ALT='Chart 12. Report/Chart012.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART13></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 13.</b>&nbsp;&nbsp;Monitor: Volume Integral Static Temperature (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart013.png' ALT='Chart 13. Report/Chart013.png'></TD>
+</TR>
+</TABLE>
+
+<a name=CHART14></a><TABLE class='FigureTable'>
+<TR><TD class='FigureTitle'><b>Chart 14.</b>&nbsp;&nbsp;Monitor: Volume (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)</TD></TR>
+<TR>
+<TD class='FigurePicture'><img src='Report/Chart014.png' ALT='Chart 14. Report/Chart014.png'></TD>
+</TR>
+</TABLE>
+
+
+</body>
+</html>

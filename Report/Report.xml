@@ -1,0 +1,370 @@
+<section name="CFD-Post Report">
+<section>
+<text name="IC Engine Combustion Simulation Report"/>
+<text name="Date"><![CDATA[ 2015/05/10 19:29:46]]></text>
+</section>
+<section name="Contents">
+<link name="File Report" src="#SECTION1._Case Sector_Act_t02"/>
+<link name="    Table 1  File Information for Sector_Act_t02" src="#TABLE1_Case Sector_Act_t02"/>
+<link name="Mesh Report" src="#SECTION2._Case Sector_Act_t02"/>
+<link name="    Table 2  Mesh Information for Sector_Act_t02" src="#TABLE2_Case Sector_Act_t02"/>
+<link name="    Table 3  Cell count at crank angles" src="#TABLE3_Case Sector_Act_t02"/>
+<link name="Setup" src="#SECTION3._Case Sector_Act_t02"/>
+<link name="  Physics" src="#SECTION3.1._Case Sector_Act_t02"/>
+<link name="      Table 4  Boundary Conditions" src="#TABLE4_Case Sector_Act_t02"/>
+<link name="  Relaxations" src="#SECTION3.2._Case Sector_Act_t02"/>
+<link name="      Table 5  Relaxations at crank angles" src="#TABLE5_Case Sector_Act_t02"/>
+<link name="  Dynamic Mesh Setup" src="#SECTION3.3._Case Sector_Act_t02"/>
+<link name="      Table 6  Dynamic Mesh Events" src="#TABLE6_Case Sector_Act_t02"/>
+<link name="  IC Engine System Inputs" src="#SECTION3.4._Case Sector_Act_t02"/>
+<link name="Solution Data" src="#SECTION4._Case Sector_Act_t02"/>
+<link name="  Animation: mesh-on-ice_cutplane_1" src="#SECTION4.1._Case Sector_Act_t02"/>
+<link name="  Animation: pt-temperature on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces" src="#SECTION4.2._Case Sector_Act_t02"/>
+<link name="  Animation: pt-velocity-magnitude on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces" src="#SECTION4.3._Case Sector_Act_t02"/>
+<link name="  Animation: temperature on ice_cutplane_1" src="#SECTION4.4._Case Sector_Act_t02"/>
+<link name="  Animation: velocity-magnitude on ice_cutplane_1" src="#SECTION4.5._Case Sector_Act_t02"/>
+<link name="  Table: mesh-on-ice_cutplane_1" src="#SECTION4.6._Case Sector_Act_t02"/>
+<link name="  Table: pt-temperature on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces" src="#SECTION4.7._Case Sector_Act_t02"/>
+<link name="  Table: pt-velocity-magnitude on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces" src="#SECTION4.8._Case Sector_Act_t02"/>
+<link name="  Table: temperature on ice_cutplane_1" src="#SECTION4.9._Case Sector_Act_t02"/>
+<link name="  Table: velocity-magnitude on ice_cutplane_1" src="#SECTION4.10._Case Sector_Act_t02"/>
+<link name="  Charts" src="#SECTION4.11._Case Sector_Act_t02"/>
+<link name="      Chart 1  Swirl Ratio" src="#CHART1_Case Sector_Act_t02"/>
+<link name="      Chart 2  Tumble Ratio" src="#CHART2_Case Sector_Act_t02"/>
+<link name="      Chart 3  Cross Tumble Ratio" src="#CHART3_Case Sector_Act_t02"/>
+<link name="      Chart 4  Apparent Heat Release Rate on (ice-fluid-chamber-bottom ice-fluid-chamber-top ice-fluid-piston)" src="#CHART4_Case Sector_Act_t02"/>
+<link name="      Chart 5  Number of Iterations per Time Step" src="#CHART5_Case Sector_Act_t02"/>
+<link name="      Chart 6  Monitor: Mass-Average Turbulent Kinetic Energy (k) (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="#CHART6_Case Sector_Act_t02"/>
+<link name="      Chart 7  Monitor: Volume Integral Density (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="#CHART7_Case Sector_Act_t02"/>
+<link name="      Chart 8  Monitor: Max Static Pressure (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="#CHART8_Case Sector_Act_t02"/>
+<link name="      Chart 9  Monitor: Max Static Temperature (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="#CHART9_Case Sector_Act_t02"/>
+<link name="      Chart 10  Monitor: Max Velocity Magnitude (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="#CHART10_Case Sector_Act_t02"/>
+<link name="      Chart 11  Penetration length of injection-0 per Time Step" src="#CHART11_Case Sector_Act_t02"/>
+<link name="      Chart 12  Monitor: Volume-Average Static Pressure (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="#CHART12_Case Sector_Act_t02"/>
+<link name="      Chart 13  Monitor: Volume Integral Static Temperature (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="#CHART13_Case Sector_Act_t02"/>
+<link name="      Chart 14  Monitor: Volume (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="#CHART14_Case Sector_Act_t02"/>
+
+</section>
+
+<section name="File Report" anchorId="SECTION1._Case Sector_Act_t02">
+  <text name=""><![CDATA[]]></text>
+
+<table name="File Information for Sector_Act_t02" showHeaders="true" collapsible="true" anchorId="TABLE1_Case Sector_Act_t02">
+  <column name="Case" id="col1" />
+  <column name="Sector_Act_t02" id="col2" />
+  <row id = "0">
+    <value>File Path</value>
+    <value>G:\Project_Azy\28 March ICE tarun sir\Sector Flow_D\Sector_Act_files\dp0\ICE-1\Fluent\ICE-1-1-01482.dat.gz</value>
+  </row>
+  <row id = "1">
+    <value>File Date</value>
+    <value>10 May 2015</value>
+  </row>
+  <row id = "2">
+    <value>File Time</value>
+    <value>07:26:53 PM</value>
+  </row>
+  <row id = "3">
+    <value>File Type</value>
+    <value>FLUENT</value>
+  </row>
+  <row id = "4">
+    <value>File Version</value>
+    <value>15.0.7</value>
+  </row>
+</table>
+
+</section>
+<section name="Mesh Report" anchorId="SECTION2._Case Sector_Act_t02">
+  <text name=""><![CDATA[]]></text>
+
+<table name="Mesh Information for Sector_Act_t02" showHeaders="true" collapsible="true" anchorId="TABLE2_Case Sector_Act_t02">
+  <column name="Domain" id="col1" />
+  <column name="Nodes" id="col2" />
+  <column name="Elements" id="col3" />
+  <row id = "0">
+    <value>ice fluid chamber bottom</value>
+    <value>1178498</value>
+    <value>1140189</value>
+  </row>
+  <row id = "1">
+    <value>ice fluid chamber top</value>
+    <value>22028</value>
+    <value>16059</value>
+  </row>
+  <row id = "2">
+    <value>ice fluid piston</value>
+    <value>127207</value>
+    <value>117504</value>
+  </row>
+  <row id = "3">
+    <value>All Domains</value>
+    <value>1327733</value>
+    <value>1273752</value>
+  </row>
+</table>
+
+<table name="Cell count at crank angles" showHeaders="true" collapsible="true" anchorId="TABLE3_Case Sector_Act_t02">
+  <column name="Crank Angle" id="col1" />
+  <column name="Cell Count" id="col2" />
+  <row id = "0">
+    <value> 0.000e+00</value>
+    <value> 1.550e+05</value>
+  </row>
+</table>
+
+</section>
+<section name="Setup" anchorId="SECTION3._Case Sector_Act_t02">
+  <text name=""><![CDATA[]]></text>
+
+<section name="Physics" anchorId="SECTION3.1._Case Sector_Act_t02">
+  <text name=""><![CDATA[]]></text>
+
+<table name="Boundary Conditions" showHeaders="true" collapsible="true" anchorId="TABLE4_Case Sector_Act_t02">
+  <column name="Type" id="col1" />
+  <column name="Zones" id="col2" />
+  <column name="Values" id="col3" />
+  <row id = "0">
+    <value>wall</value>
+    <value>ice-cyl-chamber-bottom</value>
+    <value>Temperature (k) 567 </value>
+  </row>
+  <row id = "1">
+    <value>wall</value>
+    <value>ice-cyl-chamber-top</value>
+    <value>Temperature (k) 567 </value>
+  </row>
+  <row id = "2">
+    <value>wall</value>
+    <value>ice-cyl-piston</value>
+    <value>Temperature (k) 567 </value>
+  </row>
+  <row id = "3">
+    <value>wall</value>
+    <value>ice-piston</value>
+    <value>Temperature (k) 645 </value>
+  </row>
+  <row id = "4">
+    <value>wall</value>
+    <value>ice-sector-top-faces</value>
+    <value>Temperature (k) 602 </value>
+  </row>
+</table>
+
+</section>
+<section name="Relaxations" anchorId="SECTION3.2._Case Sector_Act_t02">
+  <text name=""><![CDATA[]]></text>
+
+<table name="Relaxations at crank angles" showHeaders="true" collapsible="true" anchorId="TABLE5_Case Sector_Act_t02">
+  <column name="Crank Angle" id="col1" />
+  <column name="Pressure" id="col2" />
+  <column name="Density" id="col3" />
+  <column name="Body Forces" id="col4" />
+  <column name="Momentum" id="col5" />
+  <column name="Turbulent Kinetic Energy" id="col6" />
+  <column name="Turbulent Dissipation Rate" id="col7" />
+  <column name="Turbulent Viscosity" id="col8" />
+  <column name="Species" id="col9" />
+  <column name="Energy" id="col10" />
+  <column name="Discrete Phase Sources" id="col11" />
+  <row id = "0">
+    <value> 0.000</value>
+    <value> 0.300</value>
+    <value> 1.000</value>
+    <value> 1.000</value>
+    <value> 0.500</value>
+    <value> 0.400</value>
+    <value> 0.400</value>
+    <value> 1.000</value>
+    <value> 1.000</value>
+    <value> 1.000</value>
+    <value> 1.000</value>
+  </row>
+</table>
+
+</section>
+<section name="Dynamic Mesh Setup" anchorId="SECTION3.3._Case Sector_Act_t02">
+  <text name=""><![CDATA[]]></text>
+
+<table name="Dynamic Mesh Events" showHeaders="true" collapsible="true" anchorId="TABLE6_Case Sector_Act_t02">
+  <column name="At Crank Angle (deg)" id="col1" />
+  <column name="Name" id="col2" />
+  <column name="Description" id="col3" />
+  <row id = "0">
+    <value>721.000</value>
+    <value>reduce-dt-injection-0(0.05), enable-pt-cal-act-for-injection-0</value>
+    <value></value>
+  </row>
+  <row id = "1">
+    <value>742.500</value>
+    <value>increase-dt-injection-0(0.25), disable-pt-cal-act-for-injection-0</value>
+    <value></value>
+  </row>
+</table>
+
+</section>
+<section name="IC Engine System Inputs" anchorId="SECTION3.4._Case Sector_Act_t02">
+  <text name=""><![CDATA[Engine Inputs
+Engine Speed (rev/min) : 1500
+Crank Radius (mm) : 55
+Piston Pin Offset/Wrench (mm) : 0
+Connecting Rod Length (mm) : 232.5
+-
+Journal Customization
+Pre Iteration Journal File : N/A 
+Post Iteration Journal File : N/A ]]></text>
+
+</section>
+</section>
+<section name="Solution Data" anchorId="SECTION4._Case Sector_Act_t02">
+  <text name=""><![CDATA[]]></text>
+
+<section name="Animation: mesh-on-ice_cutplane_1" anchorId="SECTION4.1._Case Sector_Act_t02">
+  <text name=""><![CDATA[?]]></text>
+
+</section>
+<section name="Animation: pt-temperature on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces" anchorId="SECTION4.2._Case Sector_Act_t02">
+  <text name=""><![CDATA[?]]></text>
+
+</section>
+<section name="Animation: pt-velocity-magnitude on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces" anchorId="SECTION4.3._Case Sector_Act_t02">
+  <text name=""><![CDATA[?]]></text>
+
+</section>
+<section name="Animation: temperature on ice_cutplane_1" anchorId="SECTION4.4._Case Sector_Act_t02">
+  <text name=""><![CDATA[?]]></text>
+
+</section>
+<section name="Animation: velocity-magnitude on ice_cutplane_1" anchorId="SECTION4.5._Case Sector_Act_t02">
+  <text name=""><![CDATA[?]]></text>
+
+</section>
+<section name="Table: mesh-on-ice_cutplane_1" anchorId="SECTION4.6._Case Sector_Act_t02">
+  <text name=""><![CDATA[
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+]]></text>
+
+</section>
+<section name="Table: pt-temperature on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces" anchorId="SECTION4.7._Case Sector_Act_t02">
+  <text name=""><![CDATA[
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+
+
+]]></text>
+
+</section>
+<section name="Table: pt-velocity-magnitude on ice-cyl-chamber-bottom, ice-cyl-chamber-top, ice-cyl-piston, ice-piston, ice-sector-top-faces" anchorId="SECTION4.8._Case Sector_Act_t02">
+  <text name=""><![CDATA[
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+
+
+]]></text>
+
+</section>
+<section name="Table: temperature on ice_cutplane_1" anchorId="SECTION4.9._Case Sector_Act_t02">
+  <text name=""><![CDATA[
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+]]></text>
+
+</section>
+<section name="Table: velocity-magnitude on ice_cutplane_1" anchorId="SECTION4.10._Case Sector_Act_t02">
+  <text name=""><![CDATA[
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+]]></text>
+
+</section>
+<section name="Charts" anchorId="SECTION4.11._Case Sector_Act_t02">
+  <text name=""><![CDATA[]]></text>
+
+<image name="Swirl Ratio" src="Report/Chart001.png" anchorId="CHART1_Case Sector_Act_t02"/>
+
+<image name="Tumble Ratio" src="Report/Chart002.png" anchorId="CHART2_Case Sector_Act_t02"/>
+
+<image name="Cross Tumble Ratio" src="Report/Chart003.png" anchorId="CHART3_Case Sector_Act_t02"/>
+
+<image name="Apparent Heat Release Rate on (ice-fluid-chamber-bottom ice-fluid-chamber-top ice-fluid-piston)" src="Report/Chart004.png" anchorId="CHART4_Case Sector_Act_t02"/>
+
+<image name="Number of Iterations per Time Step" src="Report/Chart005.png" anchorId="CHART5_Case Sector_Act_t02"/>
+
+<image name="Monitor: Mass-Average Turbulent Kinetic Energy (k) (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="Report/Chart006.png" anchorId="CHART6_Case Sector_Act_t02"/>
+
+<image name="Monitor: Volume Integral Density (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="Report/Chart007.png" anchorId="CHART7_Case Sector_Act_t02"/>
+
+<image name="Monitor: Max Static Pressure (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="Report/Chart008.png" anchorId="CHART8_Case Sector_Act_t02"/>
+
+<image name="Monitor: Max Static Temperature (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="Report/Chart009.png" anchorId="CHART9_Case Sector_Act_t02"/>
+
+<image name="Monitor: Max Velocity Magnitude (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="Report/Chart010.png" anchorId="CHART10_Case Sector_Act_t02"/>
+
+<image name="Penetration length of injection-0 per Time Step" src="Report/Chart011.png" anchorId="CHART11_Case Sector_Act_t02"/>
+
+<image name="Monitor: Volume-Average Static Pressure (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="Report/Chart012.png" anchorId="CHART12_Case Sector_Act_t02"/>
+
+<image name="Monitor: Volume Integral Static Temperature (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="Report/Chart013.png" anchorId="CHART13_Case Sector_Act_t02"/>
+
+<image name="Monitor: Volume (ice-fluid-piston ice-fluid-chamber-top ice-fluid-chamber-bottom)" src="Report/Chart014.png" anchorId="CHART14_Case Sector_Act_t02"/>
+
+
+</section>
+</section>
+</section>
