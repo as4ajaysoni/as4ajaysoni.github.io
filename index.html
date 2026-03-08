@@ -1,1 +1,720 @@
-this is my site....
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crisis-Proof Wealth: What Nobody Tells You</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a08;
+    --surface: #111110;
+    --surface2: #1a1a17;
+    --gold: #c9a84c;
+    --gold2: #e8c96d;
+    --red: #c0392b;
+    --green: #27ae60;
+    --text: #e8e4d8;
+    --muted: #7a7768;
+    --border: #2a2a24;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(192,57,43,0.04) 0%, transparent 50%);
+  }
+
+  .header-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 1.0;
+    max-width: 900px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .header-sub {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 560px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .warning-banner {
+    margin-top: 3rem;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid var(--red);
+    background: rgba(192,57,43,0.06);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: #e07060;
+    max-width: 600px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.2s forwards;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  .tier {
+    margin: 5rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .tier.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .tier-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tier-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--border);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .tier-title-group h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .tier-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    margin-top: 0.4rem;
+    display: inline-block;
+  }
+
+  .badge-critical { background: rgba(192,57,43,0.15); color: #e07060; border: 1px solid rgba(192,57,43,0.3); }
+  .badge-hidden { background: rgba(201,168,76,0.1); color: var(--gold); border: 1px solid rgba(201,168,76,0.2); }
+  .badge-advanced { background: rgba(39,174,96,0.1); color: #5dba80; border: 1px solid rgba(39,174,96,0.2); }
+  .badge-extreme { background: rgba(150,50,200,0.1); color: #b07ad8; border: 1px solid rgba(150,50,200,0.2); }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .card:hover {
+    border-color: rgba(201,168,76,0.3);
+    transform: translateY(-2px);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card:hover::before { opacity: 1; }
+
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .card .highlight {
+    margin-top: 1rem;
+    padding: 0.6rem 0.9rem;
+    background: rgba(201,168,76,0.06);
+    border-left: 2px solid var(--gold);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold2);
+    line-height: 1.5;
+  }
+
+  .card.red-accent::before { background: linear-gradient(90deg, var(--red), transparent); opacity: 0.5; }
+  .card.red-accent:hover::before { background: linear-gradient(90deg, var(--red), transparent); opacity: 1; }
+
+  .full-width-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .full-width-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(42,42,36,0.5);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  td:first-child { color: var(--text); font-weight: 500; }
+
+  .status-dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+
+  .dot-green { background: var(--green); }
+  .dot-yellow { background: #f39c12; }
+  .dot-red { background: var(--red); }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 4rem 0;
+  }
+
+  .quote-block {
+    margin: 3rem 0;
+    padding: 2rem 2.5rem;
+    border-left: 3px solid var(--gold);
+    background: linear-gradient(135deg, rgba(201,168,76,0.04), transparent);
+  }
+
+  .quote-block blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .quote-block cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+  }
+
+  .pyramid {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .pyramid-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 0.82rem;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    transition: background 0.2s;
+    cursor: default;
+  }
+
+  .pyramid-row:last-child { border-bottom: 1px solid var(--border); }
+  .pyramid-row:hover { background: rgba(201,168,76,0.04); }
+
+  .pyramid-row:nth-child(1) { max-width: 280px; background: rgba(201,168,76,0.08); font-weight: 500; color: var(--gold); }
+  .pyramid-row:nth-child(2) { max-width: 400px; }
+  .pyramid-row:nth-child(3) { max-width: 520px; }
+  .pyramid-row:nth-child(4) { max-width: 640px; }
+  .pyramid-row:nth-child(5) { max-width: 760px; }
+  .pyramid-row:nth-child(6) { max-width: 880px; background: rgba(39,174,96,0.04); }
+
+  .pyramid-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: 0.8rem;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: 1fr; }
+    h1 { font-size: 2.8rem; }
+    .tier-number { font-size: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">⚠ Survival-Grade Financial Intelligence</div>
+  <h1>What Survives<br><em>Everything</em></h1>
+  <p class="header-sub">The investments and strategies that protect wealth through war, economic collapse, hyperinflation, and systemic breakdown — knowledge that most financial advisors will never tell you.</p>
+  <div class="warning-banner">
+    ⚠ DISCLAIMER — This is educational content only. Not financial advice. Consult a certified advisor before making any investment decisions.
+  </div>
+  <div class="scroll-hint">▼ SCROLL TO LEARN</div>
+</header>
+
+<main>
+
+  <!-- TIER 1 -->
+  <div class="tier" id="t1">
+    <div class="tier-header">
+      <div class="tier-number">01</div>
+      <div class="tier-title-group">
+        <h2>Physical Gold & Silver — The Oldest Survival Asset</h2>
+        <span class="tier-badge badge-critical">Critical — Known by Few, Used by Fewer</span>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">🥇</span>
+        <h3>Why Gold Survives Everything</h3>
+        <p>Gold has preserved wealth for 5,000+ years. During the Weimar Republic hyperinflation (1921–23), German paper money became worthless in months. A gold coin that bought a suit in 1920 still bought a suit in 1930. Paper cannot do this.</p>
+        <div class="highlight">Historical fact: Gold held value through both World Wars, the Great Depression, and every currency collapse in history.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🪙</span>
+        <h3>Silver — The People's Metal</h3>
+        <p>Silver is more practical than gold in a crisis. A gold coin may be too valuable to buy bread. Silver coins can handle daily transactions. In war economies, silver has historically functioned as actual currency when paper fails.</p>
+        <div class="highlight">Tip: Keep some in small denominations — 1g, 5g gold coins + silver coins for daily-use value.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🏠</span>
+        <h3>Physical vs Paper Gold — Critical Difference</h3>
+        <p>Gold ETFs and paper gold disappear when exchanges close or banks fail. <strong>Physical gold in your possession</strong> is the only type that works in a true crisis. During crises, paper claims on gold have been frozen, confiscated, or become worthless.</p>
+        <div class="highlight">Rule: In India, hold some physical gold (coins/bars) at home. SGBs are great normally — but not in extreme crisis.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">📦</span>
+        <h3>How Much & Where to Store</h3>
+        <p>Most experts suggest 10–20% of wealth in physical gold/silver. Never store all in one place. Home safe (small amount), bank locker (medium), trusted family member (some). Never tell anyone how much you hold.</p>
+        <div class="highlight">Security insight: Diversify storage locations like you diversify assets. One location = single point of failure.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TIER 2 -->
+  <div class="tier" id="t2">
+    <div class="tier-header">
+      <div class="tier-number">02</div>
+      <div class="tier-title-group">
+        <h2>Foreign Currency & Multi-Currency Accounts</h2>
+        <span class="tier-badge badge-hidden">Hidden Strategy — Almost Nobody Does This</span>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">💵</span>
+        <h3>USD Cash — The World's Reserve Currency</h3>
+        <p>Even in severe crises, US dollars are accepted almost everywhere on earth. During the 2008 financial crisis in Zimbabwe, the government banned its own currency — only USD worked. Keep some USD cash physically at home.</p>
+        <div class="highlight">Recommended: ₹50,000–₹1,00,000 equivalent in USD cash (legally declared). In extreme scenarios, it becomes invaluable.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🌍</span>
+        <h3>Multi-Currency Bank Accounts</h3>
+        <p>Opening a foreign currency account (in USD, EUR, or SGD) legally in India (RFC or EEFC account) protects you from Rupee devaluation. If India faces severe economic stress and the Rupee collapses 50%, your foreign account holds its value.</p>
+        <div class="highlight">Legal route: EEFC account (Exchange Earner's Foreign Currency) or RFC (Resident Foreign Currency) accounts — fully legal for Indian residents.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🏦</span>
+        <h3>Foreign Bank Account (If Possible)</h3>
+        <p>Wealthy families across Asia quietly keep assets in Singapore, UAE, or Swiss banks. If domestic banks face a banking crisis, frozen accounts, or capital controls — your foreign account is untouched. This is not tax evasion when declared properly.</p>
+        <div class="highlight">Note: All foreign accounts must be disclosed under FEMA and in ITR. Proper declaration = fully legal protection.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">₿</span>
+        <h3>Bitcoin — Controversial but Real</h3>
+        <p>Ukrainians used Bitcoin to flee with wealth when Russia invaded — banks were closed, borders controlled cash. In Nigeria's 2020–21 currency crisis, Bitcoin became a lifeline. It is digital gold with no government control. Extremely volatile, but borderless.</p>
+        <div class="highlight">Strategy: 1–5% only. Cold wallet (offline hardware wallet) storage. Never keep on exchanges — "not your keys, not your coins."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <blockquote>"In every currency crisis in history, those who held assets outside the failing system survived. Those who trusted only their government's paper, did not."</blockquote>
+    <cite>— Observation from studying 30+ economic collapses, 1900–2020</cite>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TIER 3 -->
+  <div class="tier" id="t3">
+    <div class="tier-header">
+      <div class="tier-number">03</div>
+      <div class="tier-title-group">
+        <h2>Land & Hard Assets — What Cannot Be Printed</h2>
+        <span class="tier-badge badge-hidden">Timeless Wealth Preservation</span>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">🌾</span>
+        <h3>Agricultural Land — The Ultimate Asset</h3>
+        <p>Agricultural land produces food — the one thing every human needs no matter what. In a complete economic collapse, land with water access that produces crops becomes the most valuable thing imaginable. Rich families across India quietly accumulate village farmland.</p>
+        <div class="highlight">Even small plots near water (1–2 acres) can sustain a family and generate barter value in extreme scenarios.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">💎</span>
+        <h3>Diamonds & Precious Stones</h3>
+        <p>Jewish families fleeing Nazi Germany sewed diamonds into coat linings — they could carry enormous wealth invisibly across borders. Unlike gold, diamonds are small, portable, and very high value-to-weight ratio. Used across centuries to escape with wealth.</p>
+        <div class="highlight">Caveat: Requires expertise to buy correctly. Always get certified stones (GIA/IGI). Easy to buy wrong without knowledge.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🏘️</span>
+        <h3>Productive Real Estate vs Speculative</h3>
+        <p>A property that generates rental income survives downturns far better than speculative land. During crises, people still need shelter. Rental property in essential locations (near hospitals, markets) generates income even in difficult times.</p>
+        <div class="highlight">Key insight: Real estate near water, farmland, or essential services holds value better than luxury urban property in crises.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">⚡</span>
+        <h3>Energy Infrastructure</h3>
+        <p>Solar panels + battery storage on your property make you energy-independent. In extended grid failures, power outages, or fuel crises, those with their own power have enormous advantages for security, communication, food storage, and business continuity.</p>
+        <div class="highlight">₹3–5L investment in rooftop solar can provide decades of independence from the grid and fuel price shocks.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TIER 4 -->
+  <div class="tier" id="t4">
+    <div class="tier-header">
+      <div class="tier-number">04</div>
+      <div class="tier-title-group">
+        <h2>Skills & Knowledge — What Cannot Be Taken</h2>
+        <span class="tier-badge badge-advanced">Most Overlooked Wealth</span>
+      </div>
+    </div>
+
+    <div class="full-width-card">
+      <h3>The Wealth That Survives Even Confiscation</h3>
+      <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Governments can freeze bank accounts, confiscate gold, and ban currencies. They cannot take what is inside your head. Throughout history, skilled people rebuilt their wealth faster than anyone — because their real asset was knowledge.</p>
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Skill Category</th>
+            <th>Why It Survives Crises</th>
+            <th>Value Level</th>
+          </tr>
+          <tr>
+            <td>Medical / First Aid</td>
+            <td>In war or collapse, medical care vanishes. Those with skills become invaluable — paid in any currency.</td>
+            <td><span class="status-dot dot-green"></span>Extreme</td>
+          </tr>
+          <tr>
+            <td>Food Growing / Farming</td>
+            <td>Food production knowledge is the foundation of survival and barter in any breakdown scenario.</td>
+            <td><span class="status-dot dot-green"></span>Extreme</td>
+          </tr>
+          <tr>
+            <td>Water Sourcing / Purification</td>
+            <td>Clean water is more valuable than gold in true crisis. Knowing how to find and purify it is irreplaceable.</td>
+            <td><span class="status-dot dot-green"></span>Extreme</td>
+          </tr>
+          <tr>
+            <td>Technical Trades (electrical, mechanical)</td>
+            <td>Repair skills create value when supply chains break and new goods are unavailable.</td>
+            <td><span class="status-dot dot-yellow"></span>Very High</td>
+          </tr>
+          <tr>
+            <td>Multiple Languages</td>
+            <td>Enables relocation, negotiation, and business across borders if domestic situation deteriorates.</td>
+            <td><span class="status-dot dot-yellow"></span>High</td>
+          </tr>
+          <tr>
+            <td>Negotiation & Trading Skills</td>
+            <td>Barter economies emerge in collapses. Those who can negotiate and trade thrive while others struggle.</td>
+            <td><span class="status-dot dot-yellow"></span>High</td>
+          </tr>
+          <tr>
+            <td>Technology / Software</td>
+            <td>Remote-work digital skills generate income in any country, in any currency, from anywhere.</td>
+            <td><span class="status-dot dot-yellow"></span>High</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TIER 5 -->
+  <div class="tier" id="t5">
+    <div class="tier-header">
+      <div class="tier-number">05</div>
+      <div class="tier-title-group">
+        <h2>International Diversification & Second Passport</h2>
+        <span class="tier-badge badge-extreme">Used Only by the Ultra-Wealthy — Until Now</span>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card red-accent">
+        <span class="card-icon">🛂</span>
+        <h3>Second Passport / Residency</h3>
+        <p>If your country becomes dangerous, economically or physically, a second passport is your exit. Countries like Portugal, UAE, and several Caribbean nations offer residency-by-investment. Even OCI (Overseas Citizenship of India) works as a backup if held abroad.</p>
+        <div class="highlight">A second passport is not disloyalty. It is insurance — the same reason you buy fire insurance on your house.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🌐</span>
+        <h3>Invest in Foreign Markets</h3>
+        <p>The Liberalised Remittance Scheme (LRS) allows Indians to invest up to $250,000/year abroad. US index funds (S&P 500 via apps like Vested, INDmoney) give exposure to the world's strongest economy as a hedge against India-specific risk.</p>
+        <div class="highlight">₹50,000/month in US index funds over 10 years = powerful dollar-denominated wealth outside India.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🏢</span>
+        <h3>Singapore / Dubai as Wealth Hubs</h3>
+        <p>Wealthy Indian families increasingly hold assets in Singapore or Dubai — both politically stable, low-tax, and internationally connected. Even a small investment property or business registration there creates a legal financial foothold outside India.</p>
+        <div class="highlight">UAE has zero income tax and strong legal protections. Singapore has the world's most stable banking system.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">📋</span>
+        <h3>Keep Documents & Records Abroad</h3>
+        <p>Store encrypted digital copies of all critical documents (passport, property papers, bank records, certificates) in a secure foreign cloud server or with a trusted person abroad. In a disaster or forced evacuation, losing documents is catastrophic.</p>
+        <div class="highlight">Use: ProtonDrive (Switzerland-based, encrypted). Keep physical copies in a fireproof safe AND with one trusted family member abroad.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TIER 6 -->
+  <div class="tier" id="t6">
+    <div class="tier-header">
+      <div class="tier-number">06</div>
+      <div class="tier-title-group">
+        <h2>Physical Preparedness — What War Teaches</h2>
+        <span class="tier-badge badge-extreme">Lessons from Ukraine, Syria, Lebanon</span>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card red-accent">
+        <span class="card-icon">🥫</span>
+        <h3>3–6 Month Food Reserve</h3>
+        <p>During the 2020 Lebanese economic collapse, basic food disappeared from shelves overnight. In Ukraine (2022), millions fled with no supply chains. A 3–6 month supply of rice, lentils, canned goods, and water purification tablets is not paranoia — it is basic preparedness.</p>
+        <div class="highlight">₹20,000–₹40,000 investment stores 6 months of food basics for a family of 4. Rotate stock annually.</div>
+      </div>
+      <div class="card red-accent">
+        <span class="card-icon">💊</span>
+        <h3>Medicine & Medical Supplies</h3>
+        <p>During crises, pharmacies close, supply chains break, and basic medicines vanish. Keep a 3–6 month supply of critical medications, first aid supplies, antibiotics (prescribed), water purification tablets, and basic surgical supplies.</p>
+        <div class="highlight">Also invest time: Learn basic wound care, CPR, and how to manage common health emergencies without a hospital.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">💧</span>
+        <h3>Water Security</h3>
+        <p>Water crises happen faster than food crises. Municipal water fails in earthquakes, wars, and infrastructure collapse. A rainwater harvesting system, water storage tanks (1000–5000L), and multiple purification methods (filter + iodine tablets + boiling knowledge) are critical.</p>
+        <div class="highlight">Cost: ₹15,000–₹50,000 for a comprehensive home water security setup. Returns: priceless in a real emergency.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔋</span>
+        <h3>Communication Independence</h3>
+        <p>When internet and cell networks fail (as they do in wars and disasters), short-wave radio receivers, satellite communicators (Garmin inReach), and offline maps become the only way to get information and coordinate with family.</p>
+        <div class="highlight">Keep: A hand-crank emergency radio, offline maps of your region downloaded, and an agreed family meeting point if phones fail.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SUMMARY PYRAMID -->
+  <div class="tier" id="t7">
+    <div class="tier-header">
+      <div class="tier-number">07</div>
+      <div class="tier-title-group">
+        <h2>The Survival Wealth Pyramid</h2>
+        <span class="tier-badge badge-critical">Build from Bottom Up</span>
+      </div>
+    </div>
+
+    <div class="pyramid">
+      <div class="pyramid-row"><span class="pyramid-label">Peak</span> 🛂 Second Passport / Foreign Residency</div>
+      <div class="pyramid-row"><span class="pyramid-label">Tier 5</span> ₿ Bitcoin (1–5%) + Foreign Bank Accounts</div>
+      <div class="pyramid-row"><span class="pyramid-label">Tier 4</span> 🌐 US/Global Index Funds via LRS + Foreign Real Estate</div>
+      <div class="pyramid-row"><span class="pyramid-label">Tier 3</span> 🥇 Physical Gold & Silver (10–20%) + Agricultural Land</div>
+      <div class="pyramid-row"><span class="pyramid-label">Tier 2</span> 🧠 High-Value Skills + Domestic Investments (NPS, Index Funds, PPF)</div>
+      <div class="pyramid-row"><span class="pyramid-label">Base</span> 💧 Emergency Fund + Food/Water/Medicine Reserve + Critical Documents Secured</div>
+    </div>
+    <p style="text-align:center; color: var(--muted); font-size:0.8rem; margin-top: 1.5rem; font-family: 'IBM Plex Mono', monospace;">Build the base first. Never skip levels. Each layer protects the one above it.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="full-width-card" style="margin-top: 2rem;">
+    <h3 style="color: var(--gold);">⚠ What the Wealthy Know That Others Don't</h3>
+    <p style="color: var(--muted); font-size: 0.88rem; margin-top: 1rem; line-height: 1.9;">
+      The ultra-wealthy don't just invest — they <em style="color: var(--text);">systemically diversify risk across jurisdictions, asset classes, and physical reality</em>. They hold assets that no single government can control simultaneously. They have plans B, C, and D. They hold physical assets alongside digital ones. They invest in skills alongside money. They understand that <em style="color: var(--text);">every empire, every currency, every institution eventually fails</em> — and they plan across generational timeframes, not quarterly ones.
+      <br><br>
+      The greatest investment you will ever make is removing single points of failure from your life — financial, physical, geographic, and informational. True wealth is not about being rich in normal times. It is about being resilient in the worst times.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <p>⚠ This document is for educational purposes only and does not constitute financial, legal, or investment advice.<br>
+  All foreign investments and accounts must comply with FEMA, RBI guidelines, and Indian tax law.<br>
+  Consult a SEBI-registered financial advisor and a qualified legal expert before acting on any strategy described here.</p>
+</footer>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.tier').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
